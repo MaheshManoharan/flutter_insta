@@ -8,7 +8,8 @@ class CreateAccount extends StatefulWidget {
   _CreateAccountState createState() => _CreateAccountState();
 }
 
-class _CreateAccountState extends State<CreateAccount> {
+class _CreateAccountState extends State<CreateAccount>
+    with AutomaticKeepAliveClientMixin<CreateAccount> {
   final _scaffoldKey = GlobalKey<ScaffoldState>();
   String username;
   final _formKey = GlobalKey<FormState>();
@@ -30,8 +31,11 @@ class _CreateAccountState extends State<CreateAccount> {
     }
   }
 
+  bool get wantKeepAlive => true;
+
   @override
   Widget build(BuildContext parentContext) {
+    super.build(context);
     return Scaffold(
       key: _scaffoldKey,
       appBar: header(

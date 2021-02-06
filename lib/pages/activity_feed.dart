@@ -93,6 +93,7 @@ class ActivityFeedItem extends StatelessWidget {
   }
 
   showPost(context) {
+    print('postid in:$postId');
     Navigator.push(
       context,
       MaterialPageRoute(

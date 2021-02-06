@@ -15,6 +15,9 @@ class PostScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print("userId : $userId");
+    print("postId : $postId");
+
     return FutureBuilder(
       future: postsRef
           .document(userId)
@@ -27,6 +30,7 @@ class PostScreen extends StatelessWidget {
         }
 
         Post post = Post.fromDocument(snapshot.data);
+        print("Post post = in post_screen build: $post ");
         return Center(
           child: Scaffold(
             appBar: header(
@@ -35,7 +39,9 @@ class PostScreen extends StatelessWidget {
             ),
             body: ListView(
               children: [
-                Container(child: post,)
+                Container(
+                  child: post,
+                )
               ],
             ),
           ),
